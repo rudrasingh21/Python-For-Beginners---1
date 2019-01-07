@@ -1,0 +1,63 @@
+----------------------------
+Class - Multiple Inheritance :- 
+----------------------------
+
+Benefit of Multiple Inheritance is sometimes you have two different classes and you want to inherite 
+METHODS and PROPERTIES of both classes.  -- To reuse code.
+
+Child class can access Methods of class Father and class Mother.
+
+Child class Inherate properties of Father and Mather so child has access of cooking and gardening.
+
+Child is Derived class 
+
+Father and Mother is Base Class for Child class.
+
+***************
+
+class Father():
+   def gardening(self):
+       print("I Love gardening")
+
+class Mother():
+   def cooking(self):
+       print("I Love cooking")
+
+class Child(Father,Mother):
+    def sports(self):
+        print("I Love sports")
+
+>>> c.gardening()		----class Object
+I Love gardening
+
+>>> c.cooking()
+I Love cooking
+
+>>> c.sports()
+I Love sports
+
+*****************************
+In a single method you can call base class method.
+
+Name of the methods are same.
+
+class Father():
+   def skills(self):
+       print("gardening,programming")
+
+class Mother():
+   def skills(self):
+       print("cooking,art")
+
+class Child(Father,Mother):
+    def skills(self):
+        Father.skills(self)
+        Mother.skills(self)
+        print("sports")
+
+c = Child()
+c.skills()
+
+ardening,programming
+cooking,art
+sports
