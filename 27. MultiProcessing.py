@@ -57,6 +57,7 @@ def calc_square(numbers):
 if __name__ == "__main__":
     arr = [2,3,4,5]
     p1 = multiprocessing.Process(target=calc_square, args=(arr,)) #arr is a tuple so , is there.
+    #NOTE:- square_result Global Variable passes in p1 and creates it's own copy because of multiprocessing.
 
 #to start multiprocessing we need to start it as below.
     p1.start()
