@@ -32,13 +32,10 @@ if __name__ == "__main__":
 
 import multiprocessing
 
-def calc_square(numbers , result):   #One more variable 'result'
-    #global result    --> not required
-    for idx , n in enumerate(numbers):   # to get index and value
+def calc_square(numbers , result):   #Passing Shared memory which we created in __main__ , One more variable 'result'
+    for idx , n in enumerate(numbers):   # i--> Index , n --> Value , to get index and value
         result[idx] = n*n
-        #result.append(n*n)   --> we can not use becuase it is not part of shared memory method list
-    #print("Inside Process " + str(result))
-
+ 
 if __name__ == "__main__":
     numbers = [2,3,4]
     #Now Use Shared Memory Variable Array
@@ -48,14 +45,14 @@ if __name__ == "__main__":
     p.start()
     p.join()
 
-    print(result[:])   # way to print all data in an Array
+    print(result[:])   # way to print all Elements in an Array
 
 #===========> Creating Shared Memory Variable -> Using Value we can share data into two processes
 
 import multiprocessing
 
-def calc_square(numbers , result, v):
-    v.value = 5.67
+def calc_square(numbers , result, v): #Passing Value to this process
+    v.value = 5.67                      # setting value to process
     for idx , n in enumerate(numbers):   # to get index and value
         result[idx] = n*n
 
@@ -63,7 +60,7 @@ def calc_square(numbers , result, v):
 if __name__ == "__main__":
     numbers = [2,3,4]
     result = multiprocessing.Array('i',3)
-    v = multiprocessing.Value('d',0.0)
+    v = multiprocessing.Value('d',0.0)  #'d' --> double variable , assigned value 0.0
     p = multiprocessing.Process(target=calc_square,args=(numbers,result,v))   #passing shared menory "result" in this process
 
     p.start()
