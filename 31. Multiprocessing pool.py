@@ -11,7 +11,7 @@
 # In these scenarios we think about parallalism by using all core of CPU.
 
 # We use map (dividing your input) and Reduce(aggregating) your output.
-'''
+
 from multiprocessing import Pool
 
 def f(n):
@@ -27,7 +27,7 @@ if __name__ == "__main__":
     p.join()
     print(result)
 
-'''
+
 
 #NOTE:- comparision b/w Pool processing and Serial Processing
 
