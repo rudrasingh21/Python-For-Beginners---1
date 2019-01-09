@@ -1,4 +1,4 @@
-'''
+
 import multiprocessing
 
 result = []
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     p.join()
 
     print("Outside Process " +str(result))
-'''
+
 #NOTE:- Main process has result global variable
 # and child process has calc_square process so it has it's own memory ,
 # when we create a chile process , memory for global variable is copied. so seperate copy of result variable.
@@ -29,7 +29,7 @@ if __name__ == "__main__":
 #           (b)Using VALUE
 
 #===========> Creating Shared Memory Variable -> Using Array we can share data into two processes
-'''
+
 import multiprocessing
 
 def calc_square(numbers , result):   #One more variable 'result'
@@ -41,6 +41,7 @@ def calc_square(numbers , result):   #One more variable 'result'
 
 if __name__ == "__main__":
     numbers = [2,3,4]
+    #Now Use Shared Memory Variable Array
     result = multiprocessing.Array('i',3)  #i-> int data type, 3--> size
     p = multiprocessing.Process(target=calc_square,args=(numbers,result))   #passing shared menory "result" in this process
 
@@ -48,7 +49,7 @@ if __name__ == "__main__":
     p.join()
 
     print(result[:])   # way to print all data in an Array
-'''
+
 #===========> Creating Shared Memory Variable -> Using Value we can share data into two processes
 
 import multiprocessing
