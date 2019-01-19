@@ -107,3 +107,36 @@ We can delete one or more items from a list using the keyword del. It can even d
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 NameError: name 'my_list' is not defined
+  
+ ------------------
+ #Lists Are Ordered
+ ------------------
+ 
+>>> a = ['foo', 'bar', 'baz', 'qux']
+>>> b = ['baz', 'qux', 'bar', 'foo']
+>>> a == b
+False
+
+--------------------------------------
+#the elements can be of varying types:
+--------------------------------------
+
+>>> a = [21.42, 'foobar', 3, 4, 'bark', False, 3.14159]
+>>>
+>>> a
+[21.42, 'foobar', 3, 4, 'bark', False, 3.14159]
+
+------------------
+# +ve and -ve flow:-
+------------------
+
+>>> a = ['foo', 'bar', 'baz', 'qux', 'quux', 'corge']
+>>>
+>>> a[1:3]
+['bar', 'baz']
+>>>
+>>> a[0:3]
+['foo', 'bar', 'baz']
+
+>>> a[-4:-1]
+['baz', 'qux', 'quux']
