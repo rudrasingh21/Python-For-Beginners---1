@@ -59,7 +59,7 @@ print("x"  in food)
 >>> [[x**2,x**3] for x in range(4)]
 [[0, 0], [1, 1], [4, 8], [9, 27]]
 
----------------
+--------------
 # List clear() 
 --------------
 
@@ -71,3 +71,39 @@ l.clear()
 
 print('List:', l)
 
+--------------
+# List remove() 
+--------------
+
+list.remove(element)
+
+# animal list
+animal = ['cat', 'dog', 'rabbit', 'guinea pig']
+
+# 'rabbit' element is removed
+animal.remove('rabbit')
+
+#Updated Animal List
+print('Updated animal list: ', animal)
+
+#output:- Updated animal list:  ['cat', 'dog', 'guinea pig']
+
+--------------
+# List delete() 
+--------------
+
+We can delete one or more items from a list using the keyword del. It can even delete the list entirely.
+
+>>> my_list = ['p','r','o','b','l','e','m']
+>>> del my_list[2]
+>>> my_list
+['p', 'r', 'b', 'l', 'e', 'm']
+>>> my_list[2:5]
+['b', 'l', 'e']
+>>> my_list
+['p', 'r', 'b', 'l', 'e', 'm']
+>>> del my_list
+>>> my_list
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'my_list' is not defined
