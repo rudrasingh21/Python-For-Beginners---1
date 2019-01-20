@@ -1,0 +1,39 @@
+#Recursion and example of Factorial
+
+NOTE:- 
+
+Recursion is calling a function again and again.
+
+We can achieve it using for loop as well.
+
+Recursion can only print 1000 times . It's limitation 
+
+import sys
+
+print(sys.getrecursionlimit())
+
+'''
+Output:- 1000
+'''
+
+import sys
+
+i=0
+
+def greet():
+	global i
+	i += 1
+	print("Hello",i)
+	greet()
+	
+greet()
+
+# A function calling itself.
+
+
+def fact(n):
+    if n==0:
+        return 1
+    return n * fact(n-1)
+
+print(fact(5))
