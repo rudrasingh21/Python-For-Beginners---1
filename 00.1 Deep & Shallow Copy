@@ -4,9 +4,9 @@ SHALLOW COPY:- copy all ref pointers , copies all values but creates a NEW FILE 
                copies oreginal values and top level references.
                Copies in a new instance. Eg:- Like l3
                
-DEEP COPY:-    Like l2.
+DEEP COPY:-    Like l4.
                copies everything.
-               does not create a new memory location.
+               
                
                
                
@@ -20,7 +20,7 @@ DEEP COPY:-    Like l2.
 >>> l2
 [1, 2, 3, 4]
 
-
+**********************SHALLOW COPY***********************
 >>> import copy
 >>> l3 = copy.copy(l1)
 
@@ -50,4 +50,21 @@ DEEP COPY:-    Like l2.
 >>> id(l3)
 2315308520136
 
+*********************DEEP COPY************************
 
+>>> l4 = copy.deepcopy(l2)
+>>> l4
+[1, 2, 3, 4]
+>>>
+>>> l4.append(10)
+>>> l4
+[1, 2, 3, 4, 10]
+>>> l2
+[1, 2, 3, 4]
+>>> l1
+[1, 2, 3, 4]
+>>> l3
+[1, 2, 3, 4, 5]
+
+>>> id(l4)
+2315308520200
