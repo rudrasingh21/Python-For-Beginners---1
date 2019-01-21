@@ -1,3 +1,5 @@
+#*****************Deep & Shallow Copy******************
+
 SHALLOW COPY:- copy all ref pointers , copies all values but creates a NEW FILE itself in a seperate MEMORY LOCATION.
                copies oreginal values and top level references.
                Copies in a new instance. Eg:- Like l3
